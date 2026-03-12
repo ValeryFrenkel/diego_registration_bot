@@ -12,9 +12,10 @@ class Game(Base):
     when: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
     location: Mapped[Optional[str]] = mapped_column(String(200), nullable=True)
 
-    # Раздельные лимиты: по числу команд и по суммарному числу людей
-    teams_capacity: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)   # None = без лимита
-    people_capacity: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)  # None = без лимита
+    # Лимиты на площадке
+    teams_capacity: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)     # макс. команд
+    people_capacity: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)    # общий макс. людей
+    max_players_per_team: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)  # макс. людей в команде
 
     is_active: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)

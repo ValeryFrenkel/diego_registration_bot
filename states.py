@@ -15,6 +15,11 @@ class AddGameFlow(StatesGroup):
     entering_title = State()
     entering_when = State()
     entering_location = State()
-    entering_teams_capacity = State()   # лимит по числу команд
-    entering_people_capacity = State()  # лимит по числу людей
+    entering_teams_capacity = State()
+    entering_people_capacity = State()
+    entering_max_per_team = State()
     confirming_active = State()
+
+class AdminAddTeamFlow(StatesGroup):
+    entering_team_name = State()
+    entering_players = State()
