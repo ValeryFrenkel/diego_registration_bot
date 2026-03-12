@@ -1,0 +1,19 @@
+# virtual env
+.venv/
+venv/
+
+# environment files
+.env
+.env.*
+
+# python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# database
+*.db
+
+# ide
+.idea.env
